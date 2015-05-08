@@ -1,20 +1,21 @@
 class Currency
+  attr_reader :amount, :currency_code
   def initialize (amount, currency_code)
     @amount = amount
     @currency_code = currency_code
   end
 
 
-def amount
-  @amount
+def ==(other)
+  if self.amount == other.amount
+    return true
+  else
+    false
+  end
 end
 
-def currency_code
-  @currency_code
+def +(other)
+  Currency.new(@amount + other, @currency_code)
 end
-
-
-currency = Currency.new(2, "USD")
-puts currency.amount
 
 end
