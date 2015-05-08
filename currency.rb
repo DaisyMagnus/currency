@@ -14,6 +14,7 @@ def ==(other)
   end
 end
 
+
 def +(other)
    if self.currency_code == other.currency_code
      return Currency.new(self.amount + other.amount, currency_code)
@@ -21,5 +22,15 @@ def +(other)
      puts "DifferentCurrencyCodeError"
    end
 end
+
+
+def -(other)
+   if self.currency_code == other.currency_code
+     return Currency.new(self.amount - other.amount, currency_code)
+   else
+     puts "DifferentCurrencyCodeError"
+   end
+end
+
 
 end

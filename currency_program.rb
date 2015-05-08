@@ -1,12 +1,14 @@
 require "./currency.rb"
 
-currency = Currency.new(2, "USD")
+currency = Currency.new(22, "USD")
 
 
-foo = Currency.new(3,"JPN")
+foo = Currency.new(16,"JPN")
 p currency
-fee = Currency.new(3, "USD")
+fee = Currency.new(5, "USD")
 p fee
 p foo
 p (fee == foo)
-p currency + fee
+p foo + fee
+p foo - fee #=> error
+p currency - fee #=> 17
