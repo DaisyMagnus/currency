@@ -45,4 +45,5 @@ def *(other)
    end
 end
 
+
 end
