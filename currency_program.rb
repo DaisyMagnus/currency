@@ -1,6 +1,6 @@
 require "./currency.rb"
-
-currency = Currency.new(22, "USD")
+#require "./currency_converter.rb"
+currency = Currency.new(22.35, "USD")
 
 
 foo = Currency.new(16,"JPN")
@@ -10,5 +10,7 @@ p fee
 p foo
 p (fee == foo)
 p foo + fee
-p foo - fee #=> error
-p currency - fee #=> 17
+p currency * fee
+dough = Currency.new("$5.25")
+dough.symbol_conversion
+dough + foo
