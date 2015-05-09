@@ -1,12 +1,12 @@
 class Currency
   attr_reader :amount, :currency_code
-  def initialize (amount, currency_code = "0")
+  def initialize (amount, currency_code = " ")
     @amount = amount.to_s
     @currency_code = currency_code.to_s
   end
 
 def symbol_conversion
-    @codes = {"¢"=> "GHC", "$"=> "USD"}
+    @codes = {"¢"=> "GHC", "$"=> "USD", "¥" => "JPY"}
     @codes[amount[0]]
     p amount[0].replace(@codes[amount[0]]) + amount[1..-1]
 end
