@@ -19,10 +19,16 @@ class CurrencyConverter
 #method to convert from foreign currency to us currency
   def symbol_conversion2
      @codes = {"¢"=> "GHC", "$"=> "USD", "¥" => "JPY"}
+     @usd = {"GHC" => 3.88, "USD" => 1, "JPY"=> 119.81}
       @codes[amount[0]]
-     p amount[0].replace(@codes[amount[0]]) + amount[1..-1]
-    fee = amount[1..-1].to_i * 14 #has to be another hash in there?
-    puts fee.to_s + "USD"
+    loo = amount[0].replace(@codes[amount[0]]) + amount[1..-1]
+    fee = amount[1..-1].to_s
+    foo = @usd[loo[0..2]]
+    p loo
+    p fee
+    p foo
+    koo = (fee.to_i * foo).to_s + "USD"
+    puts "There you have it! #{loo} is equal to #{koo}."
   end
 
   #def foreign_to_usd

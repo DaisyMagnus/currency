@@ -20,6 +20,6 @@ dough.symbol_conversion
 #input = gets.chomp
 #input = Currency.new(input)
 #input.symbol_conversion
-cash = CurrencyConverter.new("¥15.00")
+cash = CurrencyConverter.new("¢67.33")
 p cash
 p cash.symbol_conversion2
