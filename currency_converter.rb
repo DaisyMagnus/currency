@@ -53,4 +53,39 @@ end
 #convert the entry into a string @amount.to_s[0] = symbol then look at the first spot (index zero)
 #of the string. zero inex becomes key to look up letter. @hash[symbol]? use strip! to get rid of any white spaces possibly?
 #@amount.to_s[0]
-#@hash[symbol]
+
+
+
+# class CurrencyConverter
+#   attr_reader :amount
+#   def initialize(codes ="" usd = "")
+#     @codes = {"¢"=> "GHC", "$"=> "USD", "¥" => "JPY"}
+#     @usd = {"GHC" => 3.88, "USD" => 1, "JPY"=> 119.81}
+#     #@currency_converter = currency_converter
+#     #@foreign = foreign.to_s
+#     #@amount = amount.to_s
+#     #@hash = {"¢"=> "GHC", "$"=> "USD", "¥" => "JPY"}
+#   end
+#
+#   def known_object
+#   @known_object
+#   end
+#
+#   def requested
+#     @requested
+#   end
+#
+# #method to convert from foreign currency to us currency
+#   def currency_conversion_to_usd(amount)
+#
+#     @codes[amount[0]]
+#     loo = amount[0].replace(@codes[amount[0]]) + amount[1..-1]
+#     fee = amount[3..-1].to_i #=>
+#     foo = @usd[amount[0..2]]
+#     p fee
+#     p foo
+#     koo = "USD" + (fee.to_f * foo).to_s
+#     #puts "There you have it! #{loo} is equal to #{koo}."
+#   end
+#
+# end
