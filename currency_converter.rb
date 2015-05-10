@@ -1,91 +1,29 @@
 class CurrencyConverter
-  attr_reader :amount
-  def initialize (amount)
-    #@hash = {USD: 1.0, JPY: 119.726}
-    #@currency_converter = currency_converter
-    #@foreign = foreign.to_s
-    @amount = amount.to_s
-    #@hash = {"¢"=> "GHC", "$"=> "USD", "¥" => "JPY"}
+  def initialize
+    @codes = {"¢"=> "GHC", "$"=> "USD", "¥" => 119.81}
+    @usd = {"GHC" => 3.88, "USD" => 1, "JPY"=> 119.81}
+    #@amount = amount
   end
 
-  def known_object
-  @known_object
+  def currency_to_other(amount, currency_code)
+    p amount.check_for_code
   end
 
-  def requested
-    @requested
+#
+  def convert (amount, currency_code)
+  #First step, remove the symbol so I have an integer I can work with
+    if amount[0].to_f != 0.0
+			puts "true"
+		else amount.slice(amount[1..-1])
+    end
+    a = amount.slice(amount[1..-1])
+    a = a.to_i
+    b = amount.slice(amount[0])
+    c = @codes[b]
+    p "#{amount} is equal to #{(a/c).to_f} US dollars."
   end
 
-#method to convert from foreign currency to us currency
-  def symbol_conversion2
-     @codes = {"¢"=> "GHC", "$"=> "USD", "¥" => "JPY"}
-     @usd = {"GHC" => 3.88, "USD" => 1, "JPY"=> 119.81}
-      @codes[amount[0]]
-    loo = amount[0].replace(@codes[amount[0]]) + amount[1..-1]
-    fee = amount[1..-1].to_s
-    foo = @usd[loo[0..2]]
-    p loo
-    p fee
-    p foo
-    koo = (fee.to_i * foo).to_s + "USD"
-    puts "There you have it! #{loo} is equal to #{koo}."
-  end
 
-  #def foreign_to_usd
-     #@foreign.symbol_conversion
-  #end
+
 
 end
-
-#def convert_to_known(known_object, requested)
-#  if currency code is different for the known_object and the
-#    requested
-#  return conversion amount + currency code thats the same as the requested_objects
-#end
-
-#def three_rates
-
-#end
-
-#{USD: 1.0, EUR: 0.74}
-
-
-#convert the entry into a string @amount.to_s[0] = symbol then look at the first spot (index zero)
-#of the string. zero inex becomes key to look up letter. @hash[symbol]? use strip! to get rid of any white spaces possibly?
-#@amount.to_s[0]
-
-
-
-# class CurrencyConverter
-#   attr_reader :amount
-#   def initialize(codes ="" usd = "")
-#     @codes = {"¢"=> "GHC", "$"=> "USD", "¥" => "JPY"}
-#     @usd = {"GHC" => 3.88, "USD" => 1, "JPY"=> 119.81}
-#     #@currency_converter = currency_converter
-#     #@foreign = foreign.to_s
-#     #@amount = amount.to_s
-#     #@hash = {"¢"=> "GHC", "$"=> "USD", "¥" => "JPY"}
-#   end
-#
-#   def known_object
-#   @known_object
-#   end
-#
-#   def requested
-#     @requested
-#   end
-#
-# #method to convert from foreign currency to us currency
-#   def currency_conversion_to_usd(amount)
-#
-#     @codes[amount[0]]
-#     loo = amount[0].replace(@codes[amount[0]]) + amount[1..-1]
-#     fee = amount[3..-1].to_i #=>
-#     foo = @usd[amount[0..2]]
-#     p fee
-#     p foo
-#     koo = "USD" + (fee.to_f * foo).to_s
-#     #puts "There you have it! #{loo} is equal to #{koo}."
-#   end
-#
-# end
