@@ -7,4 +7,4 @@ currency_converter = CurrencyConverter.new
 currency = Currency.new(5, :JPY)
 p currency_converter.convert(currency, :JPY)
 cash = CurrencyConverter.new
-cash.convert_to_requested(6, :USD, :JPY)
+cash.convert_to_requested(16, :EUR, :USD)

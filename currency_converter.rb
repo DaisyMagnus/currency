@@ -12,8 +12,11 @@ class CurrencyConverter
   end
 
   def convert_to_requested (currency, currency_code, requested)
-    if (currency_code) != (requested)
+    if (currency_code) != (requested) && currency_code == :USD
       p currency.to_i * @codes_to_rates[requested]
+      p requested
+    else
+      p currency *(@codes_to_rates[requested]/@codes_to_rates[currency_code])
       p requested
     end
   end
