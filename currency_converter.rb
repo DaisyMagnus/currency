@@ -15,9 +15,12 @@ class CurrencyConverter
     if (currency_code) != (requested) && currency_code == :USD
       p currency.to_i * @codes_to_rates[requested]
       p requested
-    elsif (currency_code) != (requested) && currency_code != :USD
+    elsif
+      (currency_code) != (requested) && currency_code != :USD
       p (currency *(@codes_to_rates[requested]/@codes_to_rates[currency_code])).round(2)
       p requested
+    #else @codes_to_rates.has_key?(requested) == false || @codes_to_rates.has_key?(currency_code) ==false
+      #raise Uknown
     end
   end
 
