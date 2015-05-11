@@ -1,6 +1,6 @@
-# Currency and Currency Converter Classes
+## Currency and Currency Converter Classes
 
-##To run this program, create objects of either classes.
+###To run this program, create objects of either classes.
 
 #### The currency objects must be initialized with certain parameters.  Various methods can be called on the objects, such as ==, !=.  The == method will return false if the currency codes are not the same.
 
