@@ -1,16 +1,25 @@
 class CurrencyConverter
   def initialize
-    @codes = {"¢"=> "GHC", "$"=> "USD", "¥" => 119.81}
-    @usd = {"GHC" => 3.88, "USD" => 1, "JPY"=> 119.81}
-    #@amount = amount
+    @codes = {"¢"=> 3.88, "$"=> 1, "¥" => 119.81}
+    @codes_to_rates = {GHC: 3.88, USD: 1.0, JPY: 119.81, EUR: 0.89}
+
   end
 
-  def currency_to_other(amount, currency_code)
-    p amount.check_for_code
+  def convert (currency, currency_code)
+    if Currency.new(currency, currency_code) == Currency.new(currency, currency_code)
+      return Currency.new(currency, currency_code)
+    end
   end
 
-#
-  def convert (amount, currency_code)
+  def convert_to_requested (currency, currency_code, requested)
+    if (currency_code) != (requested)
+      p currency.to_i * @codes_to_rates[requested]
+      p requested
+    end
+  end
+
+#Will take amount that starts with symbol and convert it to USD
+  def convert_to_usd (amount)
   #First step, remove the symbol so I have an integer I can work with
     if amount[0].to_f != 0.0
 			puts "true"
@@ -20,10 +29,7 @@ class CurrencyConverter
     a = a.to_i
     b = amount.slice(amount[0])
     c = @codes[b]
-    p "#{amount} is equal to #{(a/c).to_f} US dollars."
+    p "#{amount} is equal to #{(a/c).to_f.round(2)} US dollars."
   end
-
-
-
 
 end
